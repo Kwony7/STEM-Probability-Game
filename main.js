@@ -1,4 +1,4 @@
-var outcomes = [-1, -1, -1, -1, -1, -1, -1, 0, 0, 1];
+var outcomes = [-1, -1, -1, 0, 1];
 var currState = 0;
 var count = 0;
 var output = document.getElementById("output");
@@ -22,12 +22,12 @@ function gameOver(){
 }
 
 function  roll(){
-    if(count >= 5){
+    if(count >= 3){
         alert("You have no more rolls left");
         gameOver();
         return;
     }
-    var random = Math.floor(Math.random() * 10);
+    var random = Math.floor(Math.random() * 5);
     
     if(outcomes[random] == -1){
         currState = -1;
@@ -43,6 +43,6 @@ function  roll(){
 
     count++;
 
-    rollsLeft.innerHTML = 5 - count;
+    rollsLeft.innerHTML = 3 - count;
 }
 
